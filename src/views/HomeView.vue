@@ -2,6 +2,8 @@
 import ExperienceEdu from "@/components/ExperienceEdu.vue";
 import Capstone from "@/components/Capstone.vue";
 
+var TwitterWidgetsLoader = require('twitter-widgets');
+
 export default {
   components: { ExperienceEdu, Capstone },
   data: function () {
@@ -9,6 +11,9 @@ export default {
       message: "Student Resume",
       hasImage: true,
     };
+  },
+  mounted() {
+    TwitterWidgetsLoader.load();
   },
   created: function () { },
   methods: {},
@@ -93,6 +98,11 @@ and psychologists to coordinate patient care following injuries in motor vehicle
 
     </div>
   </div>
+
+  <!-- twitter widget -->
+  <br />
+  <a class="twitter-timeline" data-width="400" data-height="400"
+    href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a>
 
 </template>
 
