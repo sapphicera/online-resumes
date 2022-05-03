@@ -26,20 +26,19 @@ export default {
   <div class="container">
     <div class="left-align">
 
-      <b-container class="row">
-        <b-row>
-          <b-col class="align-items-end">
-            <p class="float-end"><img class="size"
-                src="https://images.unsplash.com/photo-1558021211-6d1403321394?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=426&q=80">
-            </p>
-          </b-col>
-          <strong>
-            <b-col class="align-text-bottom">
-              <h2>Ben Jelinek</h2>
-            </b-col>
-          </strong>
-        </b-row>
-      </b-container>
+      <div class="row">
+        <div class="col-md-8">
+          <span id="label">
+            <h2>Ben Jelinek</h2>
+          </span>
+        </div>
+
+        <div class="col-md-4">
+          <p class="float-end"><img class="size"
+              src="https://images.unsplash.com/photo-1558021211-6d1403321394?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=426&q=80">
+          </p>
+        </div>
+      </div>
 
       <b-container class="row">
         <b-row>
@@ -113,10 +112,18 @@ and psychologists to coordinate patient care following injuries in motor vehicle
 
 .size {
   width: 200px;
-  height: 200px
+  height: 200px;
 }
 
 .align-items-end {
   vertical-align: bottom;
+}
+
+.studentimg {
+  vertical-align: baseline;
+}
+
+.label {
+  display: inline-block;
 }
 </style>
