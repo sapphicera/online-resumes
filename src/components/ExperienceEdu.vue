@@ -13,7 +13,7 @@ export default {
     </div>
   </div>
   <li> {{ details }}</li>
-  <br /><br />
+  <br />
 </template>
 
 <style>
