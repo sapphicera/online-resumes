@@ -1,8 +1,13 @@
 <script>
+import ExperienceEdu from "@/components/ExperienceEdu.vue";
+import Capstone from "@/components/Capstone.vue";
+
 export default {
+  components: { ExperienceEdu, Capstone },
   data: function () {
     return {
       message: "Student Resume",
+      hasImage: true,
     };
   },
   created: function () { },
@@ -11,15 +16,11 @@ export default {
 </script>
 
 <template>
+  <h1>{{ message }}</h1>
+
   <div class="container">
-    <h1>{{ message }}</h1>
     <div class="left-align">
-      <!-- <div class="col-md-12">
-        <h2>Ben Jelinek</h2>
-        <p class="float-end"><img style='float:left;width:200px;height:200px; margin-right:10px;'
-            src="https://images.unsplash.com/photo-1558021211-6d1403321394?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=426&q=80g" />
-        </p>
-      </div> -->
+
       <b-container class="row">
         <b-row>
           <b-col class="align-items-end">
@@ -54,7 +55,7 @@ export default {
           </strong> |
           <strong>
             <b-col>bengithub.com</b-col>
-          </strong> |
+          </strong>
         </b-row>
       </b-container>
       <hr />
@@ -68,6 +69,28 @@ export default {
       <h2>Skills</h2>
       <p>Ruby, Rails, Vue.js, JavaScript, HTML, CSS, PostgreSQL, Git, GitHub, APIs, Pair-Programming, Testing,
         Object-Oriented Programming, Bootstrap</p>
+
+      <h2>Education</h2>
+      <ExperienceEdu compuni="Actualize" jobdeg="Certificate in Full Stack Web Development" start="Jan" end="May 2022"
+        details="Capstone Project grubLuv: personally building a full-stack web application in which users can collaborate on
+        where to eat in a group, setting parameters and selecting their preferred destination, outputting a single
+        choice
+        based on their responses. Built in Ruby on Rails and Vue.js with Google Places API." />
+
+      <h2>Experience</h2>
+      <ExperienceEdu compuni="Colorado Accident and Injury" jobdeg="Chiropractic Physician " start="Oct 2019"
+        end="Feb 2022" details="Collaborated with multidisciplinary physicians including medical doctors, pain management, physical therapist,
+and psychologists to coordinate patient care following injuries in motor vehicle accidents" />
+
+      <h2>Capstone</h2>
+      <Capstone name="PROJECT NAME" url="this is a url" details="details" />
+      <div v-if="hasImage">
+        <div class="ratio ratio-16x9">
+          <div> <img src="https://gamelust.com/wp-content/uploads/2019/02/Apex-Legends-Screenshot-10-1920x1080.jpg"
+              class="img-fluid" alt="..."></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
