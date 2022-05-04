@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     howStudent: function () {
-      axios.get(`/students/1.json`).then(response => {
+      axios.get(`/students/${this.$route.params.id}.json`).then(response => {
         console.log('getting student info', response.data)
         this.student = response.data;
       }).then(() => {
