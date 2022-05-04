@@ -9,7 +9,9 @@ export default {
   components: { ExperienceEdu, CapstoneShow },
   data: function () {
     return {
-      student: {},
+      student: {
+        capstone: [],
+      },
       skillList: "",
     };
   },
@@ -40,12 +42,10 @@ export default {
 </script>
 
 <template>
-  <h1>{{ student.first_name }} {{ student.last_name }}'s Resume</h1>
+  <h1>My Resume</h1>
   <br />
 
-  <div class="d-grid gap-2 col-6 mx-auto">
-    <button class="btn btn-primary" type="button">Download Resume as PDF</button>
-  </div>
+  <button type="button" class="btn btn-primary btn-lg">Download Resume as PDF</button>
   <br /> <br />
 
   <div class="container">
@@ -91,17 +91,6 @@ export default {
           :end="experience.end_date" :details="experience.details" />
       </div>
 
-      <!-- <h2>Capstone</h2>
-      <div v-for="capstone in student.capstones" v-bind:key="capstone.id">
-        <CapstoneShow :name="capstone.name" :url="capstone.url" :details="capstone.description" />
-        <div v-if="capstone.screenshot">
-          <div class="ratio ratio-16x9">
-            <div> <img v-bind:src="capstone.screenshot" class="img-fluid" alt="..."></div>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- makes it work for has_one (but there's a ref error in console :( -->
       <h2>Capstone</h2>
       <CapstoneShow :name="student.capstone.name" :url="student.capstone.url" :details="student.capstone.description" />
 
