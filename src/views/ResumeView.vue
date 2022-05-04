@@ -42,7 +42,7 @@ export default {
 </script>
 
 <template>
-  <h1>My Resume</h1>
+  <h1>Resume</h1>
   <br />
 
   <button type="button" class="btn btn-primary btn-lg">Download Resume as PDF</button>
@@ -95,18 +95,21 @@ export default {
       <CapstoneShow :name="student.capstone.name" :url="student.capstone.url" :details="student.capstone.description" />
 
       <div v-if="student.capstone.screenshot">
-        <div class="ratio ratio-16x9">
-          <div> <img v-bind:src="student.capstone.screenshot" class="img-fluid" alt="..."></div>
-        </div>
+        <div> <img v-bind:src="student.capstone.screenshot" class="img-fluid" alt="..."></div>
       </div>
 
     </div>
   </div>
 
   <!-- twitter widget -->
-  <br /> <br /><br />
-  <a class="twitter-timeline" data-width="400" data-height="400"
-    v-bind:href="`https://twitter.com/${student.twitter_handle}`">Tweets {{ student.first_name }}</a>
+  <br />
+  <hr />
+  <div class="container">
+    <br />
+    <h1>View {{ student.first_name }} {{ student.last_name }}'s Tweets</h1>
+    <a class="twitter-timeline" data-width="400" data-height="400"
+      v-bind:href="`https://twitter.com/${student.twitter_handle}`">Tweets {{ student.first_name }}</a>
+  </div>
 
 </template>
 
